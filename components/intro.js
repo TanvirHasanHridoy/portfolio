@@ -1,32 +1,100 @@
-"use client"
-import Image from 'next/image'
-import React from 'react'
-import  {motion} from "framer-motion"
+"use client";
+import Image from "next/image";
+import React from "react";
+import { delay, motion } from "framer-motion";
+import Link from "next/link";
+import { BsArrowRight, BsGithub, BsLinkedin } from "react-icons/bs";
+import { HiDownload } from "react-icons/Hi";
 
 const Intro = () => {
   return (
-    <section>
-        <div className=' flex justify-center items-center'>
-            <div className='relative'> 
-    <motion.div
-    initial={{ opacity:0, scale:0}}
-    animate={{ opacity:1, scale:1}}>
-
+    <section className="mb-28 max-w-[50rem] text-center sm:mb-0 ">
+      <div className=" flex justify-center items-center">
+        <div className="relative">
+          <motion.div
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+          >
             <Image
-            className='h-24 w-24 rounded-full border-[0.35rem] border-white object-cover shadow-xl '
-            width="192"
-            priority={true}
-            height="192"
-            quality="95"
-            alt="img"
-            src="https://images.unsplash.com/photo-1505968409348-bd000797c92e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80" />
-    </motion.div>
-          <span className='text-2xl absolute bottom-0 right-0 outline-none '>👋</span>
-            </div>
+              className="h-24 w-24 rounded-full border-[0.35rem] border-white object-cover shadow-xl "
+              width="192"
+              priority={true}
+              height="192"
+              quality="95"
+              alt="img"
+              src="/Portait.jpg"
+            />
+          </motion.div>
+          <motion.span
+            className="text-2xl absolute bottom-0 right-0 outline-none "
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+              type: "spring",
+              stiffness: 125,
+              delay: 0.1,
+              duration: 0.7,
+            }}
+          >
+            👋
+          </motion.span>
+        </div>
+      </div>
+      <motion.h1
+        className="mb-10 mt-4 px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl"
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: 1, y: 0 }}
+      >
+        <span className="font-bold">Hello, I'm Hridoy.</span> I'm a{" "}
+        <span className="font-bold">Software Engineer</span> specializing in{" "}
+        <span className="font-bold">frontend development</span> with around{" "}
+        <span className="font-bold">2 years</span> of{" "}
+        <span className="font-bold">profesional</span> experience. I enjoy
+        building <span className="italic">sites & apps</span>. My focus is{" "}
+        <span className="underline">React (Next.js)</span>.
+      </motion.h1>
+      <motion.div
+        className="flex flex-col sm:flex-row items-center justify-center gap-2 px-4 text-lg font-medium"
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          delay: 0.2,
+        }}
+      >
+        <Link
+          className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110  focus:bggray-900 hover:bg-gray-900 active:scale-105 focus:outline-none transition"
+          href="#contact"
+        >
+          Contact me
+          <BsArrowRight className="group-hover:scale-110 group-hover:translate-x-2 transition" />{" "}
+        </Link>
 
-        </div> 
+        <a
+          href="/CV_Hridoy.pdf"
+          download
+          className="group border border-black/10 bg-white cursor-pointer  px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110  focus:bggray-900  active:scale-105 focus:outline-none transition"
+        >
+          Download CV{" "}
+          <HiDownload className=" group-hover:animate-bounce transition" />
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/th-hridoy/"
+          target="_blank"
+          className="bg-white p-4 text-gray-700 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110  focus:bggray-900  active:scale-105 focus:outline-none transition hover:text-gray-950 border border-black/10"
+        >
+          <BsLinkedin />
+        </a>
+        <a
+          href="https://github.com/TanvirHasanHridoy"
+          target="_blank"
+          className=" bg-white p-4 text-gray-700 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110  focus:bggray-900  active:scale-105 focus:outline-none transition hover:text-gray-950 border border-black/10"
+        >
+          <BsGithub />
+        </a>
+      </motion.div>
     </section>
-  )
-}
+  );
+};
 
-export default Intro
+export default Intro;
