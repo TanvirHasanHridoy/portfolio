@@ -36,7 +36,7 @@ const Intro = () => {
               height="192"
               quality="95"
               alt="img"
-              src="/Portait.jpg"
+              src="/img.jpg"
             />
           </motion.div>
           <motion.span
@@ -76,7 +76,7 @@ const Intro = () => {
         }}
       >
         <Link
-          className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110  focus:bggray-900 hover:bg-gray-900 active:scale-105 focus:outline-none transition"
+          className="hover:z-20 group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110  focus:bggray-900 hover:bg-gray-900 active:scale-105 focus:outline-none transition"
           href="#contact"
         >
           Contact me
@@ -86,7 +86,7 @@ const Intro = () => {
         <a
           href="/CV_Hridoy.pdf"
           download
-          className="group border border-black/10 bg-white cursor-pointer  px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110  focus:bggray-900  active:scale-105 focus:outline-none transition"
+          className="hover:z-20 group border border-black/10 bg-white cursor-pointer  px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110  focus:bggray-900  active:scale-105 focus:outline-none transition"
         >
           Download CV{" "}
           <HiDownload className=" group-hover:animate-bounce transition" />
@@ -95,14 +95,14 @@ const Intro = () => {
         <a
           href="https://www.linkedin.com/in/th-hridoy/"
           target="_blank"
-          className="bg-white p-4 text-gray-700 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110  focus:bggray-900  active:scale-105 focus:outline-none transition hover:text-gray-950 border border-black/10"
+          className="hover:z-20 bg-white p-4 text-gray-700 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110  focus:bggray-900  active:scale-105 focus:outline-none transition hover:text-gray-950 border border-black/10"
         >
           <BsLinkedin />
         </a>
         <a
           href="https://github.com/TanvirHasanHridoy"
           target="_blank"
-          className=" bg-white p-4 text-gray-700 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110  focus:bggray-900  active:scale-105 focus:outline-none transition hover:text-gray-950 border border-black/10"
+          className=" hover:z-20 bg-white p-4 text-gray-700 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110  focus:bggray-900  active:scale-105 focus:outline-none transition hover:text-gray-950 border border-black/10"
         >
           <BsGithub />
         </a>
