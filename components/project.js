@@ -3,6 +3,8 @@ import React, { useContext, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { activeSectionContext } from "@/context/active-section-context";
+import Link from "next/link";
+import { BsGithub } from "react-icons/bs";
 
 const Project = ({ key, project }) => {
   const { ref, inView } = useInView({ threshold: 0.6 });
@@ -26,12 +28,13 @@ const Project = ({ key, project }) => {
           className="p-4 md:p-10 h-full w-full object-cover object-center hover:scale-105 transition hover:translate-x-3 hover:rotate-2 rounded-xl"
         ></Image>
       </div>
+
       <div className="sm:flex-1 sm:h-[400px] flex flex-col justify-around text-center ">
         <div className="flex flex-col justify-between mt-4">
           <h1 className="text-xl font-bold ">{project.title}</h1>
           <p className="p-2">{project.description}</p>
         </div>
-        <div className="flex justify-center items-center">
+        <div className="flex flex-col justify-center items-center">
           <ul className="flex flex-wrap mt-4 gap-2 sm:mt-auto p-4 text-center ">
             {project.tags.map((tag, index) => (
               <li
@@ -42,6 +45,17 @@ const Project = ({ key, project }) => {
               </li>
             ))}
           </ul>
+          <div>
+            <a
+              target="_blank"
+              href={project.gitHubUrl}
+              rel={project.title}
+              className="flex items-center gap-4 text-2xl font-bold hover:scale-110"
+            >
+              GITHUB
+              <BsGithub size={40} />
+            </a>
+          </div>
         </div>
       </div>
     </section>
