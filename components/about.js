@@ -1,11 +1,15 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import SectionHeading from "./section-heading";
 
 const About = () => {
   return (
-    <section className="mb-28 max-w-[50rem] text-center sm:mb-40 leading-8  ">
-      <h2 className=" text-3xl mb-10">About me </h2>
+    <section
+      className="mb-28 max-w-[50rem] text-center sm:mb-40 leading-8 scroll-m-24 sm:scroll-mt-28 "
+      id="about"
+    >
+      <SectionHeading>About</SectionHeading>
 
       <motion.p
         initial={{
@@ -35,9 +39,8 @@ const About = () => {
         to complete tasks that{" "}
         <span className="italic font-bold"> challenges</span> me. Currently, I
         am doing my masters from a{" "}
-        <span className="font-bold md:text-xl">German University</span> and I am
-        looking for a <span className="font-bold md:text-xl">Part-time</span>{" "}
-        job.
+        <span className="font-bold ">German University</span> and I am looking
+        for a <span className="font-bold md:text-xl">Part-time</span> job.
       </motion.p>
 
       <motion.p
