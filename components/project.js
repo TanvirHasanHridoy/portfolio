@@ -1,10 +1,23 @@
 import Image from "next/image";
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { activeSectionContext } from "@/context/active-section-context";
 
 const Project = ({ key, project }) => {
+  const { ref, inView } = useInView({ threshold: 0.6 });
+  const { setActive } = useContext(activeSectionContext);
+  useEffect(() => {
+    if (inView) {
+      setActive("Projects");
+    }
+  }, [inView, setActive]);
+
   return (
-    <div className="flex flex-col sm:flex-row mb-10  bg-gray-200 p-2 sm:p-10 rounded-lg w-full  ">
+    <section
+      ref={ref}
+      className="flex flex-col sm:flex-row mb-10  bg-gray-200 p-2 sm:p-10 rounded-lg w-full  "
+    >
       <div className="sm:flex-1 bg-slate-700 h-[250px] sm:h-[400px] relative md:rounded-full xl:rounded-lg drop-shadow-2xl">
         <Image
           src={project.imageUrl}
@@ -18,11 +31,11 @@ const Project = ({ key, project }) => {
           <h1 className="text-xl font-bold ">{project.title}</h1>
           <p className="p-2">{project.description}</p>
         </div>
-        <div className="">
+        <div className="flex justify-center items-center">
           <ul className="flex flex-wrap mt-4 gap-2 sm:mt-auto p-4 text-center ">
             {project.tags.map((tag, index) => (
               <li
-                className="bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full dark:text-white/70"
+                className="bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full dark:text-white/70 hover:scale-110 hover:z-10 hover:bg-red-700 cursor-pointer"
                 key={index}
               >
                 {tag}
@@ -31,7 +44,7 @@ const Project = ({ key, project }) => {
           </ul>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
