@@ -1,7 +1,8 @@
 import React, { createContext, useState } from "react";
 
+export const activeSectionContext = createContext(null);
+
 const ActiveSectionContextProvider = ({ children }) => {
-  const activeSectionContext = createContext(null);
   const [active, setActive] = useState("Home");
   return (
     <activeSectionContext.Provider value={{ setActive, active }}>

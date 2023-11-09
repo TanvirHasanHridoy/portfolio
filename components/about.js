@@ -1,11 +1,22 @@
 "use client";
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { motion } from "framer-motion";
 import SectionHeading from "./section-heading";
+import { activeSectionContext } from "@/context/active-section-context";
+import { useInView } from "react-intersection-observer";
 
 const About = () => {
+  const { ref, inView } = useInView({ threshold: 0.6 });
+  const { setActive } = useContext(activeSectionContext);
+  useEffect(() => {
+    if (inView) {
+      setActive("About");
+    }
+  }, [inView, setActive]);
+
   return (
     <section
+      ref={ref}
       className="mb-28 max-w-[50rem] text-center sm:mb-40 leading-8 scroll-m-24 sm:scroll-mt-28 "
       id="about"
     >
