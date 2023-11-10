@@ -19,17 +19,16 @@ const Project = ({ key, project }) => {
       ref={ref}
       className={`flex flex-col sm:flex-row mb-10  ${
         project.index_number % 2 === 0 ? " " : "sm:flex-row-reverse"
-      } bg-gray-200 p-2 sm:p-10  rounded-lg w-full   `}
+      } bg-gray-200 p-2 sm:p-10  rounded-lg w-full hover:bg-gray-300 hover:scale-[1.02]  `}
     >
-      <div className="sm:flex-1 bg-slate-700 h-[250px] sm:h-[400px] relative md:rounded-full xl:rounded-lg drop-shadow-2xl">
+      <div className="sm:flex-1 bg-slate-700 h-[250px] sm:h-[400px] relative rounded-lg  drop-shadow-2xl overflow-hidden">
         <Image
           src={project.imageUrl}
           alt="Project I worked on"
           quality={95}
-          className="p-4 md:p-10 h-full w-full object-cover object-center hover:scale-105 transition hover:translate-x-3 hover:rotate-2 rounded-xl"
+          className="p-4 md:p-10 h-full w-full object-scale-down hover:scale-125 object-center  transition hover:translate-x-3 hover:rotate-2 rounded-xl"
         ></Image>
       </div>
-      {console.log("project id is" + project.index_number)}
       <div className="sm:flex-1 sm:h-[400px] flex flex-col justify-around text-center ">
         <div className="flex flex-col justify-between mt-4">
           <h1 className="text-xl font-bold ">{project.title}</h1>
