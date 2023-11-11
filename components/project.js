@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React, { useContext, useEffect, useRef } from "react";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { activeSectionContext } from "@/context/active-section-context";
 import Link from "next/link";
@@ -8,11 +8,24 @@ import { BsGithub } from "react-icons/bs";
 
 const Project = ({ key, project }) => {
   //   const { ref } = useSectionInView("Projects", 0.5);
-  //   const ref = useRef(null);
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+
+    offset: ["0 1", "1.33 1"],
+  });
+  const scaleProgess = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
+  const opacityProgess = useTransform(scrollYProgress, [0, 1], [0.1, 1]);
+  // const xProgess = useTransform(scrollYProgress, [0, 1], [0.1, 1]);
 
   return (
-    <article
-      //   ref={ref}
+    <motion.article
+      ref={ref}
+      id={project.index_number}
+      style={{
+        scale: scaleProgess,
+        opacity: opacityProgess,
+      }}
       className={`flex flex-col sm:flex-row mb-10  ${
         project.index_number % 2 === 0 ? " " : "sm:flex-row-reverse"
       } bg-gray-200 p-2 sm:p-10  rounded-lg w-full hover:bg-gray-300 hover:scale-[1.02]  `}
@@ -54,7 +67,7 @@ const Project = ({ key, project }) => {
           </div>
         </div>
       </div>
-    </article>
+    </motion.article>
   );
 };
 

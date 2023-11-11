@@ -7,23 +7,35 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
-import { experiencesData } from "@/lib/data";
+import { timelineData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
+import { InView, useInView } from "react-intersection-observer";
 
-export default function Experience() {
-  const { ref } = useSectionInView("Experience");
+export default function Timeline() {
+  const { ref } = useSectionInView("Timeline");
+
+  // const {  inView } = useInView({
+  //   threshold: 0.2,
+  // });
 
   return (
-    <section id="experience" ref={ref} className="scroll-mt-28 mb-28 sm:mb-40">
-      <SectionHeading>My experience</SectionHeading>
-      <VerticalTimeline lineColor="">
-        {experiencesData.map((item, index) => (
+    <section
+      id="timeline"
+      ref={ref}
+      className="scroll-mt-28 mb-28 sm:mb-40 text-center"
+    >
+      <SectionHeading>Timeline</SectionHeading>
+      <VerticalTimeline lineColor="#82a6ea">
+        {timelineData.map((item, index) => (
           <React.Fragment key={index}>
             <VerticalTimelineElement
+              // intersectionObserverProps={ref}
+              className="vertical-timeline-element--work"
+              visible={true}
               contentStyle={{
-                background: "rgba(255, 255, 255, 0.05)",
+                background: "rgba(255, 0, 255, 0.05)",
                 boxShadow: "none",
-                border: "1px solid rgba(0, 0, 0, 0.05)",
+                border: "1px solid rgba(0, 230, 0, 0.05)",
                 textAlign: "left",
                 padding: "1.3rem 2rem",
               }}

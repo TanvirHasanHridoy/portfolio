@@ -12,7 +12,7 @@ const About = () => {
   return (
     <section
       ref={ref}
-      className="mb-28 max-w-[50rem] text-center sm:mb-40 leading-8 scroll-m-24 sm:scroll-mt-28 "
+      className="mb-24 max-w-[50rem] text-center  leading-8 scroll-m-24 sm:scroll-mt-28 "
       id="about"
     >
       <SectionHeading>About</SectionHeading>
