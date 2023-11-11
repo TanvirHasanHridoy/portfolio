@@ -7,15 +7,11 @@ import { BsArrowRight, BsGithub, BsLinkedin } from "react-icons/bs";
 import { HiDownload } from "react-icons/Hi";
 import { useInView } from "react-intersection-observer";
 import { activeSectionContext } from "@/context/active-section-context";
+import { useSectionInView } from "@/lib/hooks";
 
 const Intro = () => {
-  const { ref, inView } = useInView({ threshold: 0.6 });
-  const { setActive } = useContext(activeSectionContext);
-  useEffect(() => {
-    if (inView) {
-      setActive("Home");
-    }
-  }, [inView, setActive]);
+  const { ref } = useSectionInView("Home", 0.5);
+  const { setActive, setTimeOfLastClick } = useContext(activeSectionContext);
 
   return (
     <section
@@ -78,6 +74,10 @@ const Intro = () => {
         <Link
           className="hover:z-20 group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110  focus:bggray-900 hover:bg-gray-900 active:scale-105 focus:outline-none transition"
           href="#contact"
+          onClick={() => {
+            setActive("Contact");
+            setTimeOfLastClick(Date.now());
+          }}
         >
           Contact me
           <BsArrowRight className="group-hover:scale-110 group-hover:translate-x-2 transition" />{" "}

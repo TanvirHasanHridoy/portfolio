@@ -6,7 +6,8 @@ import { activeSectionContext } from "@/context/active-section-context";
 
 const Header = () => {
   // const [active, setActive] = useState("Home");
-  const { active, setActive } = useContext(activeSectionContext);
+  const { active, setActive, setTimeOfLastClick } =
+    useContext(activeSectionContext);
   return (
     <header className="z-[999] relative">
       <motion.div
@@ -28,7 +29,10 @@ const Header = () => {
               <Link
                 className="flex w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition relative"
                 href={link.hash}
-                onClick={() => setActive(link.name)}
+                onClick={() => {
+                  setActive(link.name);
+                  setTimeOfLastClick(Date.now());
+                }}
               >
                 {link.name}
                 {link.name === active && (

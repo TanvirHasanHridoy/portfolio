@@ -1,21 +1,15 @@
 "use client";
 
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import SectionHeading from "./section-heading";
 import { useInView } from "react-intersection-observer";
 import { activeSectionContext } from "@/context/active-section-context";
 import Project from "./project";
 import { projectsData } from "@/lib/data";
+import { useSectionInView } from "@/lib/hooks";
 
 const Projects = () => {
-  const { ref, inView } = useInView({ threshold: 0.6 });
-  const { setActive } = useContext(activeSectionContext);
-  useEffect(() => {
-    if (inView) {
-      setActive("Projects");
-    }
-  }, [inView, setActive]);
-
+  const { ref } = useSectionInView("Projects", 0);
   return (
     <section
       ref={ref}

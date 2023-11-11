@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { activeSectionContext } from "@/context/active-section-context";
@@ -7,16 +7,12 @@ import Link from "next/link";
 import { BsGithub } from "react-icons/bs";
 
 const Project = ({ key, project }) => {
-  const { ref, inView } = useInView({ threshold: 0.6 });
-  const { setActive } = useContext(activeSectionContext);
-  useEffect(() => {
-    if (inView) {
-      setActive("Projects");
-    }
-  }, [inView, setActive]);
+  //   const { ref } = useSectionInView("Projects", 0.5);
+  //   const ref = useRef(null);
+
   return (
     <article
-      ref={ref}
+      //   ref={ref}
       className={`flex flex-col sm:flex-row mb-10  ${
         project.index_number % 2 === 0 ? " " : "sm:flex-row-reverse"
       } bg-gray-200 p-2 sm:p-10  rounded-lg w-full hover:bg-gray-300 hover:scale-[1.02]  `}
