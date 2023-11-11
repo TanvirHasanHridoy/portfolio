@@ -54,6 +54,16 @@ export default function Timeline() {
               <p className="!mt-1 !font-normal text-gray-700 dark:text-white/75">
                 {item.description}
               </p>
+              <div className="flex flex-wrap gap-x-3 mt-4">
+                {item.tags.map((tag, index) => (
+                  <span
+                    key={index}
+                    className="inline-block px-2 py-0.5 text-xs rounded-full font-semibold uppercase bg-gray-200 dark:bg-gray-900"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </VerticalTimelineElement>
           </React.Fragment>
         ))}
