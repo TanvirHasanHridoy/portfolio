@@ -6,6 +6,7 @@ import Intro from "@/components/intro";
 import Contact from "@/components/contact";
 import Projects from "@/components/projects";
 import SectionDivider from "@/components/section-divider";
+import Footer from "@/components/footer";
 
 // import Experience from "@/components/experience";
 
@@ -20,6 +21,7 @@ export default function Home() {
       <Skills />
       <Timeline />
       <Contact />
+      <Footer />
       {/* <SectionDivider />
       <Skills />
       <SectionDivider />
