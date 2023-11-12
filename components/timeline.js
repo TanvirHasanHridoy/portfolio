@@ -47,6 +47,7 @@ export default function Timeline() {
               iconStyle={{
                 background: "rgba(255, 255, 255, 0.15)",
                 fontSize: "1.5rem",
+                color: "#82a6ea",
               }}
             >
               <h3 className="font-semibold capitalize">{item.title}</h3>
