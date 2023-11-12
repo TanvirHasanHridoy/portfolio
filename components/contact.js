@@ -5,6 +5,7 @@ import SectionHeading from "./section-heading";
 import { useSectionInView } from "@/lib/hooks";
 import SubmitBtn from "./submit-btn";
 import { sendEmail } from "@/actions/sendEmail";
+import toast from "react-hot-toast";
 // import SubmitBtn from "./submit-btn";
 
 const Contact = () => {
@@ -33,13 +34,13 @@ const Contact = () => {
           const { data, error } = await sendEmail(formData);
 
           if (error) {
-            // toast.error(error);
+            toast.error(error);
             console.log("There was an error sending your email");
             console.log(error.message);
             return;
           }
           console.log("SUCceeded");
-          //   toast.success("Email sent successfully!");
+          toast.success("Email sent successfully!");
         }}
       >
         <input
