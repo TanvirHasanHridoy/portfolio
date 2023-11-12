@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import SectionHeading from "./section-heading";
 import { useSectionInView } from "@/lib/hooks";
 import SubmitBtn from "./submit-btn";
@@ -9,6 +9,17 @@ import toast from "react-hot-toast";
 // import SubmitBtn from "./submit-btn";
 
 const Contact = () => {
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSuccess = () => {
+    // Your form submission logic
+
+    // After successful submission, clear the name input
+    setEmail("");
+    setMessage("");
+  };
+
   const { ref } = useSectionInView("Contact", 0);
   return (
     <section
@@ -40,6 +51,7 @@ const Contact = () => {
             return;
           }
           console.log("SUCceeded");
+          handleSuccess();
           toast.success("Email sent successfully!");
         }}
       >
@@ -49,14 +61,18 @@ const Contact = () => {
           type="email"
           required
           maxLength={500}
+          value={email}
           placeholder="Your email"
+          onChange={(event) => setEmail(event.target.value)}
         />
         <textarea
           className="h-52 my-3 rounded-lg borderBlack p-4 dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
           name="message"
           placeholder="Your message"
           required
+          value={message}
           maxLength={5000}
+          onChange={(event) => setMessage(event.target.value)}
         />
         <SubmitBtn />
       </form>

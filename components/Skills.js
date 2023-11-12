@@ -40,7 +40,7 @@ const Skills = () => {
         {mySkills.map((skill, index) => {
           return (
             <motion.li
-              className="group hover:bg-red-600 z-50 bg-white outline-double sm:outline-dashed borderBlack rounded-xl px-5 py-3 dark:bg-white/10 dark:text-white/80 flex items-center gap-1 hover:drop-shadow-2xl  cursor-pointer"
+              className="group hover:bg-red-600 z-50 bg-white outline-double sm:outline-dashed borderBlack rounded-xl px-5 py-3 dark:bg-white/10 dark:hover:text-zinc-400 dark:text-white/80 flex items-center gap-1 hover:drop-shadow-2xl  cursor-pointer"
               key={index}
               custom={index}
               variants={fadeInAnimationVariants}

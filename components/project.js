@@ -28,7 +28,7 @@ const Project = ({ key, project }) => {
       }}
       className={`flex flex-col sm:flex-row mb-10  ${
         project.index_number % 2 === 0 ? " " : "sm:flex-row-reverse"
-      } bg-gray-200 p-2 sm:p-10  rounded-lg w-full hover:bg-gray-300 hover:scale-[1.02]  `}
+      } bg-gray-200 p-2 sm:p-10  rounded-lg w-full hover:bg-gray-300 dark:bg-gray-500 dark:text-gray-200 hover:scale-[1.02]  `}
     >
       <div className="sm:flex-1 bg-slate-700 h-[250px] sm:h-[400px] relative rounded-lg  drop-shadow-2xl overflow-hidden">
         <Image
