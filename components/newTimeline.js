@@ -1,35 +1,62 @@
+"use client";
 import React from "react";
+import { useSectionInView } from "@/lib/hooks";
 import SectionHeading from "./section-heading";
-import { BiLogoAmazon } from "react-icons/bi";
+import {
+  VerticalTimeline,
+  VerticalTimelineElement,
+} from "react-vertical-timeline-component";
+import "react-vertical-timeline-component/style.min.css";
 import { timelineData } from "@/lib/data";
-const Timeline = () => {
+import { useInView } from "react-intersection-observer";
+
+const ExperienceElement = ({ theme, item }) => {
+  const { ref, inView } = useInView({ threshold: 0 });
   return (
-    <section className="mb-24 lg:max-w-[80rem] w-full text-center px-4 lg:px-10  leading-8 scroll-m-24 sm:scroll-mt-28">
-      <SectionHeading>Timeline</SectionHeading>
-      <article className="h-screen w-full">
-        <div className="h-full w-full  relative">
-          {/* middle bar */}
-          <div className="bg-gray-200 my-24 h-[80%] w-1 rounded-full hidden sm:block absolute top-5 left-1/2 "></div>
-          {/* experiences */}
-          <div className="top-5 left-[46%]  absolute flex items-center text-left">
-            <BiLogoAmazon className="h-24 w-24 rounded-full border-8 border-[#82a6ea] flex-shrink-0"></BiLogoAmazon>
-            {/* connector */}
-            <div className="bg-gray-200 my-24 h-2 w-20  hidden sm:block "></div>
-            <div className="bg-gray-200 my-24  rounded-lg p-2 ">
-              <h1>Front-End Developer</h1>
-              <h2>Orlando, FL</h2>
-              <p>
-                I'm now a full-stack developer working as a freelancer. My stack
-                includes React, Next.js, TypeScript, Tailwind, Prisma and
-                MongoDB. I'm open to full-time opportunities.
-              </p>
-              <h1>2021 - present</h1>
-            </div>
-          </div>
-        </div>
-      </article>
-    </section>
+    <div ref={ref} className="vertical-timeline-element">
+      <VerticalTimelineElement
+        visible={inView}
+        contentStyle={{
+          background:
+            theme === "light" ? "#f3f4f6" : "rgba(255, 255, 255, 0.05)",
+          boxShadow: "none",
+          border: "1px solid rgba(0, 0, 0, 0.05)",
+          textAlign: "left",
+          padding: "1.3rem 2rem",
+        }}
+        contentArrowStyle={{
+          borderRight:
+            theme === "light"
+              ? "0.4rem solid #9ca3af"
+              : "0.4rem solid rgba(255, 255, 255, 0.5)",
+        }}
+        date={item.date}
+        icon={item.icon}
+        iconStyle={{
+          background: theme === "light" ? "white" : "#9ca3af",
+          fontSize: "1.5rem",
+        }}
+      >
+        <h3 className="font-semibold capitalize">{item.title}</h3>
+        <p className="font-normal !mt-0">{item.location}</p>
+        <p className="!mt-1 !font-normal text-gray-700 dark:text-white/75">
+          {item.description}
+        </p>
+      </VerticalTimelineElement>
+    </div>
   );
 };
 
-export default Timeline;
+export default function Experience() {
+  const { ref } = useSectionInView("Timeline");
+  return (
+    <section ref={ref} id="timeline" className="scroll-mt-28 mb-28 sm:mb-40">
+      <SectionHeading>My Experience</SectionHeading>
+      <VerticalTimeline lineColor="">
+        {timelineData.map((item, index) => (
+          <ExperienceElement key={index} item={item} />
+        ))}
+      </VerticalTimeline>
+    </section>
+  );
+}

@@ -1,7 +1,7 @@
 import Skills from "@/components/Skills";
 import About from "@/components/about";
-import Timeline from "@/components/timeline";
-// import Timeline from "@/components/newTimeline";
+// import Timeline from "@/components/timeline";
+import Timeline from "@/components/newTimeline";
 import Intro from "@/components/intro";
 import Contact from "@/components/contact";
 import Projects from "@/components/projects";
