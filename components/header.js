@@ -28,7 +28,9 @@ const Header = () => {
             >
               <Link
                 className={` flex w-full items-center justify-center px-3 py-3 dark:text-gray-3  dark:hover:text-gray-100 hover:text-gray-950 transition relative ${
-                  active === link.name ? " dark:text-white" : ""
+                  active === link.name
+                    ? " dark:text-white text-black"
+                    : "text-black/60 "
                 } `}
                 href={link.hash}
                 onClick={() => {
