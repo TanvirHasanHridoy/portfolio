@@ -50,9 +50,13 @@ const ExperienceElement = ({ theme, item }) => {
 export default function Experience() {
   const { ref } = useSectionInView("Timeline");
   return (
-    <section ref={ref} id="timeline" className="scroll-mt-28 mb-28 sm:mb-40">
+    <section
+      ref={ref}
+      id="timeline"
+      className="scroll-mt-28 mb-28 sm:mb-40 text-center"
+    >
       <SectionHeading>My Experience</SectionHeading>
-      <VerticalTimeline lineColor="">
+      <VerticalTimeline lineColor="#414652">
         {timelineData.map((item, index) => (
           <ExperienceElement key={index} item={item} />
         ))}
