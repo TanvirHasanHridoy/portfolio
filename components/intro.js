@@ -5,8 +5,6 @@ import React, { useContext, useEffect } from "react";
 import { delay, motion } from "framer-motion";
 import Link from "next/link";
 import { BsArrowRight, BsDownload, BsGithub, BsLinkedin } from "react-icons/bs";
-import { HiDownload } from "react-icons/Hi";
-import { useInView } from "react-intersection-observer";
 import { activeSectionContext } from "@/context/active-section-context";
 import { useSectionInView } from "@/lib/hooks";
 
