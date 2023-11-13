@@ -23,9 +23,10 @@ const Projects = () => {
       <div class="absolute top-72 left-20 w-72 h-72 md:w-96 md:h-96 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div> */}
       <div className="max-w-max md:p-10 ">
         {projectsData.map((project, index) => {
-          <React.Fragment>
-            return <Project project={project} />;
-          </React.Fragment>;
+          {
+            console.log("Shoukd call project now");
+          }
+          <Project project={project} />;
         })}
       </div>
     </section>

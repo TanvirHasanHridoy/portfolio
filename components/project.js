@@ -17,7 +17,7 @@ const Project = ({ key, project }) => {
   const scaleProgess = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
   const opacityProgess = useTransform(scrollYProgress, [0, 1], [0.1, 1]);
   // const xProgess = useTransform(scrollYProgress, [0, 1], [0.1, 1]);
-
+  console.log("Here is the ptoject");
   return (
     <motion.article
       ref={ref}
