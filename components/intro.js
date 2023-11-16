@@ -57,7 +57,7 @@ const Intro = () => {
         <span className="font-bold">Hello, I'm Hridoy.</span> I'm a{" "}
         <span className="font-bold">Software Engineer</span> specializing in{" "}
         <span className="font-bold">frontend development</span> with around{" "}
-        <span className="font-bold">2 years</span> of{" "}
+        <span className="font-bold">1+ years</span> of{" "}
         <span className="font-bold">profesional</span> experience. I enjoy
         building <span className="italic">sites & apps</span>. My focus is{" "}
         <span className="underline">React (Next.js)</span>.
@@ -83,7 +83,7 @@ const Intro = () => {
         </Link>
 
         <a
-          href="/CV_Hridoy.pdf"
+          href="https://drive.google.com/file/d/1_a7XD82WuCF8oGwRZMGX1mcK0Z-IU452/view?usp=drive_link"
           download
           className="h-12 hover:z-20 group  cursor-pointer px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110  focus:bg-gray-red-700 dark:focus:bg-red-700 dark:focus:text-white active:scale-105 focus:outline-none transition border border-black/10  bg-white  dark:text-red-700  "
         >
