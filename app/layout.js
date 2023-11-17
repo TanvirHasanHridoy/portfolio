@@ -9,6 +9,9 @@ import { Toaster } from "react-hot-toast";
 import ThemeContextProvider from "@/context/theme-context";
 import ThemeSwitch from "@/components/theme-switch";
 
+import netflix from "@/public/netflix.png";
+import Head from "next/head";
+
 const inter = Inter({ subsets: ["latin"] });
 
 // export const metadata = {
@@ -19,6 +22,20 @@ const inter = Inter({ subsets: ["latin"] });
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="!scroll-smooth">
+      <title>Hridoy portfolio</title>
+      <Head>
+        <meta
+          name="description"
+          content="Dev Hridoy portfolio website, where you can find about his career"
+          key="desc"
+        />
+        <meta property="og:title" content="Hridoy Portfolio" />
+        <meta
+          property="og:description"
+          content="Check out my work and see what I've been working on!"
+        />
+        <meta property="og:image" content={netflix} />
+      </Head>
       <body
         className={`${inter.className} dark:bg-[#232722] dark:text-white bg-gray-50 relative text-gray-950 pt-32 sm:pt-40 `}
       >
