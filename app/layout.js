@@ -7,6 +7,7 @@ import ActiveSectionContextProvider from "@/context/active-section-context";
 import Footer from "@/components/footer";
 import { Toaster } from "react-hot-toast";
 import ThemeContextProvider from "@/context/theme-context";
+import { Analytics } from "@vercel/analytics/react";
 import ThemeSwitch from "@/components/theme-switch";
 
 import netflix from "@/public/netflix.png";
@@ -49,6 +50,7 @@ export default function RootLayout({ children }) {
           <ActiveSectionContextProvider>
             <Header />
             {children}
+            <Analytics />
             <Footer />
             <Toaster position="bottom-left" />
           </ActiveSectionContextProvider>
