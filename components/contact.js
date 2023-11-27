@@ -50,7 +50,7 @@ const Contact = () => {
             console.log(error.message);
             return;
           }
-          console.log("SUCceeded");
+          console.log("Successfully sent your email");
           handleSuccess();
           toast.success("Email sent successfully!");
         }}
@@ -75,6 +75,10 @@ const Contact = () => {
           onChange={(event) => setMessage(event.target.value)}
         />
         <SubmitBtn />
+        <p className="text-left p-2 mt-2 text-xs text-gray-400 dark:text-white/40 ">
+          NOTE: If the email is not sent by the first time, please try reloading
+          the page and try again
+        </p>
       </form>
     </section>
   );
