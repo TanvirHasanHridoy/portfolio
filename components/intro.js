@@ -56,11 +56,11 @@ const Intro = () => {
       >
         <span className="font-bold">Hello, I'm Hridoy.</span> I'm a{" "}
         <span className="font-bold">Software Engineer</span> specializing in{" "}
-        <span className="font-bold">frontend development</span> with around{" "}
+        <span className="font-bold">full-stack development</span> with around{" "}
         <span className="font-bold">1+ years</span> of{" "}
         <span className="font-bold">profesional</span> experience. I enjoy
         building <span className="italic">sites & apps</span>. My focus is{" "}
-        <span className="underline">React (Next.js)</span>.
+        <span className="underline">React (Next.js) and express.js</span>.
       </motion.h1>
       <motion.div
         className="flex flex-col sm:flex-row items-center justify-center gap-2 px-4 text-lg font-medium"

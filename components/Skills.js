@@ -17,6 +17,7 @@ const fadeInAnimationVariants = {
     y: 0,
     transition: {
       delay: 0.05 * index,
+      type: "spring",
     },
   }),
 };
@@ -34,13 +35,13 @@ const Skills = () => {
       {/* GRID TO SHOW MY SKILLS */}
       {/* <ul className="sm:mt-20 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-4 mx-auto "> */}
       <ul className="flex flex-wrap justify-center gap-y-6 md:gap-10 text-lg text-gray-800 md:mt-24 relative">
-        <div className="absolute top-10 -left-4 w-72 h-72 md:w-96 md:h-96  bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-        <div className="absolute top-40 -right-4 w-72 h-72 md:w-96 md:h-96 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-        <div className="absolute top-28 left-26 w-72 h-72 md:w-96 md:h-96 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+        <div className="absolute top-10 -left-4 w-72 h-72 md:w-96 md:h-96 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+        <div className="absolute top-40 -right-4 w-72 h-72 md:w-96 md:h-96 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-1000"></div>
+        <div className="absolute top-28 left-26 w-72 h-72 md:w-96 md:h-96 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
         {mySkills.map((skill, index) => {
           return (
             <motion.li
-              className="group hover:bg-red-600 z-50 bg-white outline-double sm:outline-dashed borderBlack rounded-xl px-5 py-3 dark:bg-white/10 dark:hover:text-zinc-400 dark:text-white/80 flex items-center gap-1 hover:drop-shadow-2xl  cursor-pointer"
+              className="group hover:bg-red-600 z-50 bg-white outline-double sm:outline-dashed borderBlack rounded-xl px-5 py-3 dark:bg-white/10 dark:hover:text-zinc-400 dark:text-white/80 flex items-center gap-1 hover:drop-shadow-2xl  cursor-pointer transition-all hover:animate-bounce"
               key={index}
               custom={index}
               variants={fadeInAnimationVariants}
@@ -50,7 +51,7 @@ const Skills = () => {
                 once: true,
               }}
             >
-              <div className="font-bold  group-hover:text-white ">
+              <div className="font-bold  group-hover:text-white  ">
                 {skill.name}
               </div>
               <span className=" group-hover:text-white "> {skill.icon}</span>

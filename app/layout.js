@@ -38,7 +38,7 @@ export default function RootLayout({ children }) {
         <meta property="og:image" content={netflix} />
       </Head>
       <body
-        className={`${inter.className} dark:bg-[#232722] dark:text-white bg-gray-50 relative text-gray-950 pt-32 sm:pt-40 `}
+        className={`${inter.className} dark:bg-[#2a3838] dark:text-white bg-gray-50 relative text-gray-950 pt-32 sm:pt-40 `}
       >
         {/* <Navbar/> */}
         <div className="bg-[#fbe2e3] dark:bg-[#4f3f88] absolute top-[-6rem] right-[11rem] -z-10 h-[31.25rem] w-[31.25rem]  rounded-full blur-[10rem] sm:w-[68.75rem]"></div>
